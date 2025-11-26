@@ -34,10 +34,10 @@ class AITextbookAdminBackendOffline:
             try:
                 # Try to load in offline mode first
                 self.embeddings = HuggingFaceEmbeddings(
-                    model_name="./models/embeddings/sentence-transformers/all-MiniLM-L6-v2",
-                    model_kwargs={'device': 'cpu', 'local_files_only': True}
+                    model_name="sentence-transformers/all-MiniLM-L6-v2",
+                    model_kwargs={'device': 'cpu', 'local_files_only': True},
+                    cache_folder="./models/embeddings"
                 )
-
                 print("✅ Offline embeddings loaded from cache!")
                 
             except Exception as offline_error:
@@ -68,8 +68,8 @@ class AITextbookAdminBackendOffline:
                 self.llm_available = len(models) > 0
                 if models:
                     model_names = [model['name'] for model in models]
-                    if any('llama3:8b' in name for name in model_names):
-                        self.model_name = "llama3:8b"
+                    if any('llama3.2' in name for name in model_names):
+                        self.model_name = "llama3.2"
                     else:
                         self.model_name = model_names[0].split(':')[0]
                     print(f"✅ Local AI ready: {self.model_name}")
