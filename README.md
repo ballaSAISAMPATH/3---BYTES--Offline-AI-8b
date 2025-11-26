@@ -1,6 +1,6 @@
-# AI Textbook Tutor - Offline Local AI for Learners
+# Offline Local AI for Education
 
-Fully offline AI-powered Textbook Tutor supporting English and Telugu with Streamlit, LangChain, Ollama, ChromaDB, and HuggingFace embeddings.
+Fully offline AI-powered Offline information provider supporting English and Telugu with Streamlit, LangChain, Ollama, ChromaDB, and HuggingFace embeddings.
 
 =====================================================================
 
@@ -154,4 +154,3 @@ Troubleshooting
 
 =====================================================================
 
-Made by SAI SAMPATH BALLA for offline AI learning
